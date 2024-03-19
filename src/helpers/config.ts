@@ -161,7 +161,7 @@ const config: SiteConfig = {
 	contact: {
 		name: 'Gabriel Samuel',
 		email: 'gabemsamuel@gmail.com',
-		website: 'https://aliciasykes.com',
+		website: 'https://gabesamuel.com',
 		socials: {
 			// Twitter: 'Lissy_Sykes',
 			GitHub: 'gabesamu',
@@ -336,10 +336,10 @@ const config: SiteConfig = {
 		testing: ['Jest', 'Puppeteer', 'Enzyme', 'Cypress'],
 		security: ['Nmap', 'OWASPZAP', 'BurpSuite', 'Wireshark']
 	},
-	plausible: {
-		scriptSrc: 'https://no-track.as93.net/js/script.js',
-		domain: 'aliciasykes.com'
-	}
+	// plausible: {
+	// 	scriptSrc: 'https://no-track.as93.net/js/script.js',
+	// 	domain: 'aliciasykes.com'
+	// }
 };
 
 export default config;
