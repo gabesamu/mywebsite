@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import config from '$src/helpers/config';
 	import Heading from '$src/components/Heading.svelte';
 	import LinkButton from '$src/components/LinkButton.svelte';
@@ -11,7 +11,7 @@
 	<div class="buttons">
 		<LinkButton to="/about" icon="more-arrow">Keep Reading</LinkButton>
 		<LinkButton
-			to="https://linkedin.com/in/aliciasykes"
+			to="https://linkedin.com/in/gabesamu"
 			icon="linkedin"
 			priority="outline"
 			textColor="var(--accent)"
@@ -62,4 +62,4 @@
 			}
 		}
 	}
-</style>
+</style> -->

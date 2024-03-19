@@ -45,8 +45,8 @@
 	<meta property="twitter:url" content={config.baseUrl} />
 	<meta property="twitter:title" content={config.title} />
 	<meta property="twitter:description" content={config.description} />
-	<meta property="og:image" content="/preview.png" />
-	<meta property="twitter:image" content="/preview.png" />
+	<!-- <meta property="og:image" content="/preview.png" />
+	<meta property="twitter:image" content="/preview.png" /> -->
 </svelte:head>
 
 {#if shouldShowNavBar($page.url.pathname)}

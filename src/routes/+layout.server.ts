@@ -4,7 +4,7 @@ import { rssFeedUrls } from '$src/store/BlogStore';
 import { fetchPostsFromRss } from '$src/helpers/fetch-rss-posts';
 import { type RssPost, PostStatus } from '$src/types/RssXml';
 
-export const prerender = true;
+// export const prerender = true;
 
 // export const _loadPosts = (fetch?: (() => Promise<Response>),  feeds?: RssUrlList) => {
 //   let fetchStatus: PostStatus = PostStatus.Loading;
@@ -25,7 +25,7 @@ export const prerender = true;
 // };
 
 export const load: PageServerLoad = async ({ fetch }) => {
-	console.log('loading blog posts');
+	// console.log('loading blog posts');
 	//   if (get(blogStore)?.length > 0) {
 	//     return { posts: get(blogStore) };
 	//   }

@@ -4,18 +4,22 @@
 	import LinkButton from '$src/components/LinkButton.svelte';
 	import SocialLink from '$src/components/SocialLink.svelte';
 	import { socialNetworks } from '$src/helpers/constants';
-	import type { SupportedSocials, UserSocial } from '$src/types/Socials';
+	import type {  UserSocial } from '$src/types/Socials';
 
 	export let accent = 'var(--accent)';
 
 	export let returnedSocials: any;
 
-	// Append usernames, and (if available) metrics to available socials
-	let socials: UserSocial[] = socialNetworks.map((social) => {
-		const network: (typeof SupportedSocials)[number] = social.name;
-		const metrics = returnedSocials[social.name.toLowerCase().replace(/\W/g, '')] || [];
-		return { ...social, user: config.contact.socials[network], metrics };
-	});
+    const contact = config.contact;
+    const socialUsernames = Object.entries(contact.socials);
+
+    let socials: UserSocial[] = socialUsernames.map(([network, username]) => {
+        let social = socialNetworks.find((s) => s.name === network);
+        if (!social) {
+            social = { name: network, icon: '', link: '', tone: ''};
+        }
+        return { ...social, user: username };
+    });
 
 	// Limit number of socials to display
 	let numSocialsToDisplay = config.contact.socialButtonLimit || 6;
@@ -31,13 +35,6 @@
 	<Heading level="h2" color="var(--accent)">Contact</Heading>
 	<div class="buttons">
 		<LinkButton to="/contact" icon="more-arrow">Get in Touch</LinkButton>
-		<LinkButton
-			to={config.contact.pgpKeyLink}
-			icon="pgp"
-			priority="outline"
-			textColor="var(--accent)"
-			target="_blank">View GPG Key</LinkButton
-		>
 	</div>
 	<div class="social-buttons">
 		{#each socials.slice(0, numSocialsToDisplay) as social}

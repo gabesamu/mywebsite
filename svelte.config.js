@@ -1,5 +1,14 @@
-import adapter from '@sveltejs/adapter-auto';
+import autoAdapter from '@sveltejs/adapter-auto';
+import netlifyAdapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+let adapter;
+if (process.env.DEPOLY_TARGET === 'NETLIFY') {
+    adapter = netlifyAdapter();
+}else {
+    adapter = autoAdapter();
+}
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,19 +20,13 @@ const config = {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter(),
+        adapter: adapter,
+
+
 		alias: {
 			'$src/*': 'src/*'
 		}
 	}
-
-	// vite: {
-	//     'resolve': {
-	//         alias: {
-	//             '$src': './src',
-	//         },
-	//     },
-	// }
 };
 
 export default config;

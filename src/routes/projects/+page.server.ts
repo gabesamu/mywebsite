@@ -3,7 +3,7 @@ import { GITHUB_TOKEN } from '$env/static/private';
 import type { Project } from '$src/types/Project';
 import type { PageServerLoad } from '../$types.js';
 
-export const prerender = true;
+// export const prerender = true;
 
 const makeProjectList = async (ghResponse: any): Promise<Project[]> => {
 	if (!ghResponse || !Array.isArray(ghResponse)) return [];
