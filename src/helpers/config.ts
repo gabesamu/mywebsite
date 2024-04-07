@@ -168,6 +168,7 @@ const config: SiteConfig = {
 			'Dev.to': 'gabesamu',
 			LinkedIn: 'in/gabesamu',
 			StackOverflow: '23629660/gabriel',
+            CodersRank: 'gabesamu',
 		},
 		socialButtonLimit: 6,
 		mailerConfig: {
